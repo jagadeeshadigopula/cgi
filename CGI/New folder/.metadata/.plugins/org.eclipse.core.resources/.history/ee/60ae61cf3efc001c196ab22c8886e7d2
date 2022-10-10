@@ -1,0 +1,82 @@
+package com.stackroute.exercises;
+
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
+public class FibonacciSeries {
+
+    //write here logic to write a string from fibonacciSeriesGenerator in a file
+    public String fileContentAdder(String fileName, int seriesLength) throws IOException {
+
+        return null;
+        if(fileName==null){
+            return "Given fileName to read or write is empty, null or blank space";
+        }
+
+        if((fileName.isEmpty())||(fileName==" ")){
+            return "Given fileName to read or write is empty, null or blank space";
+        }
+        if(fileName!="FibonacciSeries.txt"){
+            return "File with "+fileName+" not found";
+        }
+        if ((seriesLength<1)||(seriesLength>40)){
+            return "The length of series should be between 1 and 40";
+        }
+
+        String str = fibonacciSeriesGenerator(seriesLength);
+
+        FileInputStream fin = new FileInputStream(fileName);
+        FileChannel readChannel = fin.getChannel();
+        ByteBuffer readBuffer = ByteBuffer.allocate(1024);
+        int result = readChannel.read(readBuffer);
+
+
+        if(result>0) {
+            FileOutputStream fout = new FileOutputStream(fileName);
+            FileChannel writeChannel = fout.getChannel();
+            ByteBuffer writeBuffer = ByteBuffer.allocate(11023);
+            writeBuffer.put(str.getBytes());
+            writeBuffer.flip();
+            writeChannel.write(writeBuffer);
+        }
+
+        return "";
+
+    }
+
+    //Write here logic to create the series of fibonacci numbers returned by fibonacciCalculator
+    public String fibonacciSeriesGenerator(int seriesLength) {
+        int n = fibonacciCalculator(seriesLength);
+        String s = "";
+        int a = 0;
+        int b =1;
+
+        return null;
+        while (b<=n) {
+            int c = a + b;
+            s = s+" "+Integer.toString(a);
+            a = b;
+            b = c;
+        }
+        return s;
+    }
+
+    //Write here logic here to find fibonacci number at particular position in the series
+    public int fibonacciCalculator(int number) {
+        int a=0;
+        int b =1;
+
+        int i=0;
+        while (i<=number){
+            int c = a+b;
+            a=b;
+            b=c;
+
+        return 0;
+            i=i+1;
+        }
+        return b;
+    }
+}

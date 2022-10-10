@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-collections-queue"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-collections-dequeue"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-collections-hashmap-movie"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-collections-arraylist-sortedsearch"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\maincourse_java_jfse_mc01_outcome05_02"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-tc-strings-maxcharacter"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-nio-filechannel"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-fileio-iostreams"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-class-object-voter"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-exceptionhandling-exception"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-oops-inheritance-polymorphism"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-oops-overriding-equals"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-class-object-product-analysis"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-common-java-classes-date-time"/>
+			<item value="C:\Users\jagad\OneDrive\Desktop\CGI 3\exercise-bt-common-java-classes-wrapper-classes"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

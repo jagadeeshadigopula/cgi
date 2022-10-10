@@ -1,0 +1,108 @@
+service/jenkins created
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get servies --namespace=jenkins
+error: the server doesn't have a resource type "servies"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get servies --namespace=jenkins
+error: the server doesn't have a resource type "servies"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)          AGE
+jenkins      LoadBalancer   10.11.128.75   34.131.109.203   8080:31122/TCP   89s
+kubernetes   ClusterIP      10.11.128.1    <none>           443/TCP          22m
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deploments jenkins --port=8080 --type=LoadBalanacer --namespace=jenkins
+error: the server doesn't have a resource type "deploments"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deployments jenkins --port=8080 --type=LoadBalanacer --namespace=jenkins                                               
+The Service "jenkins" is invalid: spec.type: Unsupported value: "LoadBalanacer": supported values: "ClusterIP", "ExternalName", "LoadBalancer", "NodePort"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ gcloud container clusters get-credentials team-a --region asia-south2 --project inspired-campus-363403
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for team-a.
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ ls
+Dockerfile  jenkins-deployment.yaml  jenkins-pvc.yaml  jenkins-service.yaml  jenkins.yaml  README-cloudshell.txt  sample
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deploments jenkins --port=8080 --type=LoadBalanacer --namespace=jenkins
+error: the server doesn't have a resource type "deploments"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deployments jenkins --port=8080 --type=LoadBalanacer --namespace=jenkins
+The Service "jenkins" is invalid: spec.type: Unsupported value: "LoadBalanacer": supported values: "ClusterIP", "ExternalName", "LoadBalancer", "NodePort"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deploments jenkins --port=8080 --type=LoadBalancer --namespace=jenkins
+error: the server doesn't have a resource type "deploments"
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deployments jenkins --port=8080 --type=LoadBalancer --namespace=jenkins
+Error from server (AlreadyExists): services "jenkins" already exists
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)          AGE
+jenkins      LoadBalancer   10.11.128.75   34.131.109.203   8080:31122/TCP   16m
+kubernetes   ClusterIP      10.11.128.1    <none>           443/TCP          37m
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services --namespace=jenkins
+NAME           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+jenkins        NodePort    10.11.129.51   <none>        8080:30000/TCP   30m
+jenkins-jnlp   ClusterIP   10.11.128.13   <none>        50000/TCP        30m
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl delete service jenkins --namepace=jenkins
+error: unknown flag: --namepace
+See 'kubectl delete --help' for usage.
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl delete service jenkins --namespace=jenkins
+service "jenkins" deleted
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl expose deployments jenkins --port=8080 --type=LoadBalancer --namespace=jenkins
+service/jenkins exposed
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services  --namespace=jenkins
+NAME           TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+jenkins        LoadBalancer   10.11.128.79   <pending>     8080:31352/TCP   28s
+jenkins-jnlp   ClusterIP      10.11.128.13   <none>        50000/TCP        32m
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services  --namespace=jenkins
+NAME           TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+jenkins        LoadBalancer   10.11.128.79   <pending>     8080:31352/TCP   43s
+jenkins-jnlp   ClusterIP      10.11.128.13   <none>        50000/TCP        32m
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl get services  --namespace=jenkins
+NAME           TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)          AGE
+jenkins        LoadBalancer   10.11.128.79   34.131.49.24   8080:31352/TCP   66s
+jenkins-jnlp   ClusterIP      10.11.128.13   <none>         50000/TCP        32m
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$ kubectl logs deployment/jenkins --namespace=jenkins
+Running from: /usr/share/jenkins/jenkins.war
+webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2022-10-07 05:22:15.570+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2022-10-07 05:22:20.063+0000 [id=1]     WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+2022-10-07 05:22:20.566+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-10.0.11; built: 2022-06-21T21:12:44.640Z; git: d988aa016e0bb2de6fba84c1659049c72eae3e32; jvm 11.0.16.1+1
+2022-10-07 05:22:23.043+0000 [id=1]     INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2022-10-07 05:22:23.453+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2022-10-07 05:22:26.859+0000 [id=1]     INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2022-10-07 05:22:28.069+0000 [id=1]     INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@4d8286c4{Jenkins v2.361.2,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+2022-10-07 05:22:28.266+0000 [id=1]     INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@e84a8e1{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2022-10-07 05:22:28.462+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: Started Server@32c8e539{STARTING}[10.0.11,sto=0] @16566ms
+2022-10-07 05:22:28.545+0000 [id=23]    INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2022-10-07 05:22:30.349+0000 [id=28]    INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2022-10-07 05:22:30.462+0000 [id=28]    INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2022-10-07 05:22:36.153+0000 [id=28]    INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2022-10-07 05:22:36.163+0000 [id=29]    INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2022-10-07 05:22:36.364+0000 [id=28]    INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2022-10-07 05:22:37.948+0000 [id=29]    INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2022-10-07 05:22:37.949+0000 [id=29]    INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2022-10-07 05:22:37.949+0000 [id=29]    INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2022-10-07 05:22:37.954+0000 [id=28]    INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (file:/var/jenkins_home/war/WEB-INF/lib/groovy-all-2.4.21.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2022-10-07 05:22:39.866+0000 [id=42]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Download metadata
+2022-10-07 05:22:39.962+0000 [id=42]    INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2022-10-07 05:22:41.965+0000 [id=29]    INFO    jenkins.install.SetupWizard#init:
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+670ab82a268147dd82ef0f5d65f53310
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2022-10-07 05:24:19.066+0000 [id=29]    INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2022-10-07 05:24:19.164+0000 [id=22]    INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2022-10-07 05:24:20.256+0000 [id=42]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2022-10-07 05:24:20.257+0000 [id=42]    INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+2022-10-07 05:24:20.261+0000 [id=42]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Download metadata. 100,316 ms
+2022-10-07 05:25:56.850+0000 [id=63]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Periodic background build discarder
+2022-10-07 05:25:56.852+0000 [id=63]    INFO    hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Periodic background build discarder. 1 ms
+jagadeeshadigopula@cloudshell:~ (inspired-campus-363403)$

@@ -1,0 +1,60 @@
+package com.stackroute.strings;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class MaxCharacterTests {
+    MaxCharacter maxCharacter;
+    @BeforeEach
+    public void setUp() {
+        maxCharacter = new MaxCharacter();
+    }
+    @Test
+    public void alphabetsTest() {
+        String s=new String("Java");
+        assertEquals('a', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void digitsTest() {
+        String s=new String("11010234");
+        assertEquals('1', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void specialTest() {
+        String s=new String("#$%@@");
+        assertEquals('@', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void alphabetsTest1() {
+        String s=new String("anusha");
+        assertEquals('a', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void digitsTest1() {
+        String s=new String("123332");
+        assertEquals('3', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void specialTest1() {
+        String s=new String("#$%%@");
+        assertEquals('%', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void alphabetsTest3() {
+        String s=new String("anusriassh");
+        assertEquals('s', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void digitsTest3() {
+        String s=new String("1266632");
+        assertEquals('6', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+    @Test
+    public void specialTest3() {
+        String s=new String("$$%$@");
+        assertEquals('$', maxCharacter.findMaxCharacterCount(s), "Check the logic");
+    }
+
+}

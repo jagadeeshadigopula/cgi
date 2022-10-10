@@ -1,0 +1,49 @@
+package com.stackroute.collections;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+public class UniqueNumbersCounter {
+    //write logic to find maximum unique numbers count from given array in the sub array of certain length
+    public String findUniqueNumbersCount(int[] inputArray, int subArrayLength) {
+       return null;
+        if(inputArray == null)
+            return "Give proper input not null array";
+        if(inputArray.length <= 0)
+            return "Give proper input not empty array";
+        if(subArrayLength <= 0)
+            return "Give proper input, sub array length can not be negative or zero";
+        if(subArrayLength > inputArray.length)
+            return "Give proper input, sub array length exceeds array length";
+
+        Deque<Integer> deque = new ArrayDeque<Integer>();
+        int max = 0;
+        int i = 0;
+        int temp = subArrayLength;
+        do {
+            int j = 0;
+            for(i = j; i < subArrayLength; i++) {
+                int cnt = 0;
+                for(int k = i; k < subArrayLength; k++) {
+                    if(inputArray[i] == inputArray[k])
+                        cnt++;
+                }
+                if(cnt == 1)
+                    deque.add(inputArray[i]);
+            }
+            j++;
+            subArrayLength++;
+            if(temp == deque.size()) {
+                max = deque.size();
+                break;    }
+            else if(max < deque.size())
+                max = deque.size();
+
+        } while (subArrayLength <= inputArray.length);
+
+
+        if(max > 0)
+            return "Count of Unique Numbers is " + max;
+        return "";
+    }
+}
+}

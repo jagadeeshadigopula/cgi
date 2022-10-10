@@ -1,0 +1,25 @@
+package com.stackroute.exercises;
+
+
+import java.io.*;
+
+public class FibonacciSeries {
+
+    //write here logic to write a string from fibonacciSeriesGenerator in a file
+    public String fileContentAdder(String fileName, int seriesLength) throws IOException {
+
+        return null;
+    }
+
+    //Write here logic to create the series of fibonacci numbers returned by fibonacciCalculator
+    public String fibonacciSeriesGenerator(int seriesLength) {
+
+        return null;
+    }
+
+    //Write here logic here to find fibonacci number at particular position in the series
+    public int fibonacciCalculator(int number) {
+
+        return 0;
+    }
+}

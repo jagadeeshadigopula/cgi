@@ -1,0 +1,27 @@
+package com.stackroute.collections;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class UniqueNumbersCounter {
+    //write logic to find maximum unique numbers count from given array in the sub array of certain length
+    public String findUniqueNumbersCount(int[] inputArray, int subArrayLength) {
+    	if (inputArray == null) {
+    		return "Give proper input not null array";
+    	}
+    	else if (inputArray.length == 0) {
+    		return "Give proper input not empty array";
+    	}
+    	else if (subArrayLength <= 0) {
+    		return "Give proper input, sub array length can not be negative or zero";
+    	}
+    	else if (subArrayLength > inputArray.length) {
+    		return "Give proper input, sub array length exceeds array length";
+    	}
+    		Set<Integer> arr = new HashSet<>();
+    		for (int i = 0; i < subArrayLength; i++) {
+    			arr.add(inputArray[i]);
+    		}
+    		return "Count of Unique Numbers is " + arr.size();
+    }
+}

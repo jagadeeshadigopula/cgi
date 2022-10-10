@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MovieTests" project="exercise-bt-hashmap-movie" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.stackroute.collections.MovieTests" time="0.026" displayname="MovieTests" uniqueid="[engine:junit-jupiter]/[class:com.stackroute.collections.MovieTests]">
+    <testcase name="givenValidMovieValuesWhenCreatedThenSetProperties" classname="com.stackroute.collections.MovieTests" time="0.02" displayname="givenValidMovieValuesWhenCreatedThenSetProperties()" uniqueid="[engine:junit-jupiter]/[class:com.stackroute.collections.MovieTests]/[method:givenValidMovieValuesWhenCreatedThenSetProperties()]"/>
+    <testcase name="givenInValidMovieReleaseDateValuesWhenCreatedThenThrowException" classname="com.stackroute.collections.MovieTests" time="0.002" displayname="givenInValidMovieReleaseDateValuesWhenCreatedThenThrowException()" uniqueid="[engine:junit-jupiter]/[class:com.stackroute.collections.MovieTests]/[method:givenInValidMovieReleaseDateValuesWhenCreatedThenThrowException()]"/>
+    <testcase name="givenValidMovieDetailsThenReturnMovieDetails" classname="com.stackroute.collections.MovieTests" time="0.002" displayname="givenValidMovieDetailsThenReturnMovieDetails()" uniqueid="[engine:junit-jupiter]/[class:com.stackroute.collections.MovieTests]/[method:givenValidMovieDetailsThenReturnMovieDetails()]"/>
+    <testcase name="givenMovieClassThenShouldBeOfComparableType" classname="com.stackroute.collections.MovieTests" time="0.001" displayname="givenMovieClassThenShouldBeOfComparableType()" uniqueid="[engine:junit-jupiter]/[class:com.stackroute.collections.MovieTests]/[method:givenMovieClassThenShouldBeOfComparableType()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,10 @@
+package com.stackroute.strings;
+
+public class MaxCharacterTests {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

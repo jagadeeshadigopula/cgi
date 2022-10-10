@@ -1,0 +1,40 @@
+package com.stackroute.strings;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Anagram {
+    //write logic to check given two phrases are anagrams or not and return result
+    public String checkAnagrams(String phraseOne, String phraseTwo) {
+        String s1 = phraseOne;  
+        String s2 = phraseTwo;
+        if((s1.isBlank())&&(s2.isEmpty())){
+        	return("Give proper input not empty phrases");
+        }
+        if(s1.length() == s2.length()) {
+            // convert strings to char array
+            char[] charArray1 = s1.toCharArray();
+            char[] charArray2 = s2.toCharArray();
+
+            // sort the char array
+            Arrays.sort(charArray1);
+            Arrays.sort(charArray2);
+        
+            boolean status = Arrays.equals(charArray1, charArray2);
+            if (status) {  
+            	return("Given phrases are anagrams");  
+            } else {  
+            	return("Given phrases are not anagrams");  
+            } 
+        }else {
+
+        	return("Given phrases are not anagrams");
+		}  
+    }  
+
+    public static void main(String[] args){
+
+    	Scanner s=new Scanner(System.in);
+    	String str1=s.next();
+    	String str2=s.next();
+    	new Anagram().checkAnagrams(str1,str2);
+    }
+}

@@ -1,0 +1,10 @@
+package com.stackroute.fileio;
+
+import java.io.IOException;
+
+public class RemoveDuplicateLines {
+    //write logic to read data from input.txt and  write result to output.txt
+    public void removeDuplicateLines() throws IOException {
+
+    }
+}

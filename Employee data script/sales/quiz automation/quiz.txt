@@ -1,0 +1,6 @@
+1. Which is the fastest animal ? # a) Elephant b) Cheetah # b
+2. Which is the longest river ? # a) Nile b) Ganges # a
+3. king of fruits? # a)mango b)Pineapple #a
+4. Capital of Telangana? # a) secunderabad b) Hyderabad #b
+5. Prime Minister of India? # a)Narendra Modi b)Jagadeesh #a
+6. Bash Using Which Operating System? # a) Windows b)Linux #b
