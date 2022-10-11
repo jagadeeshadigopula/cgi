@@ -1,1 +1,3 @@
-print("welcome")
+print(" WELCOME")
+print("   TO   ")
+print("TEAM - A")
